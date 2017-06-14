@@ -54,23 +54,7 @@ public class ChessGui extends JPanel {
 		// g.setColor(Color.BLACK);
 		// board[0][0].grid(g, 0, 0);
 	}
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		panel = new ChessGui();
-		JFrame frame = new JFrame("Chess Game");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.add(panel);
-		frame.pack();
-		frame.setBackground(Color.gray);
-		frame.setVisible(true);
-		frame.addMouseListener(click);
-		
-
-	}
-
+	
 	public void setPieces() {
 		setPawns();
 		setRooks();
@@ -104,7 +88,6 @@ public class ChessGui extends JPanel {
 		board[7][5]= new Bishop(5, 7, "b");
 	}
 	
-	
 	/*
 	 * generates knights for the game
 	 */
@@ -136,6 +119,22 @@ public class ChessGui extends JPanel {
 			board[y][x] = new Pawn(x, y, "b");
 			x++;
 		}
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		panel = new ChessGui();
+		JFrame frame = new JFrame("Chess Game");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.add(panel);
+		frame.pack();
+		frame.setBackground(Color.gray);
+		frame.setVisible(true);
+		frame.addMouseListener(click);
+		
+
 	}
 	
 	
